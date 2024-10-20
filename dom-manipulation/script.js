@@ -236,4 +236,14 @@ async function postQuoteToServer(quote) {
   
   setInterval(syncWithServer, 10000);
   
+  .notification {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #f44336;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
   
