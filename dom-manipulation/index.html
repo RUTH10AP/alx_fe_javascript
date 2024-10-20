@@ -1,18 +1,45 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Quote Generator</title>
-  </head>
-  <body>
-    <h1>Dynamic Quote Generator</h1>
-    <select id="categoryFilter" onchange="filterQuotes()">
-        <option value="all">All Categories</option>
-      </select>
-      
-    <div id="quoteDisplay"></div>
-    <button id="newQuote">Show New Quote</button>
-    <script src="script.js"></script>
-  </body>
-  </html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Quote Generator</title>
+  <style>
+    /* Add some styles for notifications */
+    .notification {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: #ff9800;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>Dynamic Quote Generator</h1>
+
+  <!-- Notification Area for conflict resolution messages -->
+  <div id="notification-area"></div>
+
+  <!-- Dropdown for category filter -->
+  <label for="categoryFilter">Filter by category:</label>
+  <select id="categoryFilter" onchange="filterQuotes()">
+    <option value="all">All Categories</option>
+    <!-- Dynamically populated categories will go here -->
+  </select>
+  
+  <!-- Quote display area -->
+  <div id="quoteDisplay"></div>
+
+  <!-- Button to show a new random quote -->
+  <button id="newQuote" onclick="showRandomQuote()">Show New Quote</button>
+
+  <!-- Button to sync quotes with server manually (optional) -->
+  <button onclick="syncWithServer()">Sync with Server</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
